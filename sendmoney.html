@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferencias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!--CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1 class="title">Transferir</h1>
+        </div>
+        <div>
+            <h2 class="title">Envíe dinero a otras personas y deposite entre cuentas propias!</h2>
+        </div>
+    </header>
+
+    <main class="container mt-5">
+        <div>
+            <h3 class="title">Datos del receptor</h3>
+        </div>
+        <form>
+            <div>
+                <div class="mb-3">
+                    <label for="nombre">Nombre receptor</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="banco">Banco destinatario</label>
+                    <select id="banco" name="origen" class="form-select" required>
+                        <option value="" selected disabled>Seleccione el Banco</option>
+                        <option value="estado">Banco del Estado</option>
+                        <option value="santander">Banco Santander</option>
+                        <option value="bci">Banco BCI</option>
+                        <option value="chile">Banco de Chile</option>
+                        <option value="falabella">Banco Falabella</option>
+                        <option value="itau">Banco Itaú</option>
+                        <option value="bice">Banco BICE</option>
+                        <option value="scotiabank">Scotiabank</option>
+                    </select>
+                    <div class="mb-3">
+                        <label for="tpo-cta">Tipo de cuenta</label>
+                        <select id="tpo-cta" name="tipoCuenta" class="form-select" required>
+                            <option value="" selected disabled>Seleccione un tipo de cuenta</option>
+                            <option value="corriente">Corriente</option>
+                            <option value="vista">Vista</option>
+                            <option value="ahorro">Ahorro</option>
+                            <option value="rut">CuentaRut</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nro-cta">Número de cuenta destino</label>
+                        <input type="number" class="form-control" name="nro-cta" id="nro-cta">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" class="form-control" name="email" id="email">
+                    </div>
+                    <div class="form-check">
+                        <label for="frecuente" class="form-check-label">Hacer de éste un destinatario frecuente</label>
+                        <input type="checkbox" class="form-check-input" id="frecuente">
+                    </div>
+        </form>
+        <hr>
+        <form>
+            <div>
+                <h3 class="title">Datos del emisor</h3>
+            </div>
+            <div class="mb-3">
+                <label for="origen">Cuenta de origen</label>
+                <input type="number" class="form-control" name="origen" id="origen">
+            </div>
+            <div class="mb-3">
+                <label for="monto">Monto a transferir</label>
+                <input type="number" class="form-control" name="monto" id="monto">
+            </div>
+            <div class="mb-3">
+                <label for="password">Contraseña</label>
+                <input type="password" class="form-control" name="clave" id="clave">
+            </div>
+            <div>
+                <a href="menu.html" target="_blank" class="boton-menu">Realizar transferencia</a>
+            </div>
+        </form>    
+
+
+    </main>
+
+    <footer>
+        <p class="pie">2026 Alke Wallet</p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>    
+
+</body>
+
+</html>

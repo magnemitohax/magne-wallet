@@ -1,0 +1,224 @@
+/* =========================
+   ALKE WALLET - STYLE.CSS
+   ========================= */
+
+:root {
+    --primary: #00b894;
+    --primary-dark: #00997a;
+    --secondary: #0984e3;
+    --background: #f4f7fb;
+    --card: #ffffff;
+    --text: #2d3436;
+    --text-light: #636e72;
+    --border: #dfe6e9;
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #f4f7fb 0%,
+        #eafaf7 100%
+    );
+    color: var(--text);
+    min-height: 100vh;
+    padding: 30px;
+}
+
+/* TITULOS */
+
+h1,
+h2,
+h3 {
+    color: var(--text);
+    font-weight: 700;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title h1 {
+    font-size: 2.5rem;
+}
+
+/* CONTENEDORES */
+
+.card-wallet {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255,255,255,0.5);
+    margin-bottom: 25px;
+}
+
+/* SALDO */
+
+.balance-card {
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+    color: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.balance-card h2 {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.balance-card .amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* BOTONES */
+
+.boton-menu,
+.btn-wallet {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color: white;
+    text-decoration: none;
+
+    border: none;
+    border-radius: 12px;
+
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.boton-menu:hover,
+.btn-wallet:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(9,132,227,0.25);
+}
+
+/* FORMULARIOS */
+
+form {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 4px rgba(9,132,227,0.15);
+}
+
+/* TABLAS */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+thead {
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+    color: white;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: center;
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--border);
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* NAVBAR */
+
+.navbar-wallet {
+    background: white;
+    border-radius: 15px;
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+/* PIE DE PAGINA */
+
+.pie {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-light);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .title h1 {
+        font-size: 2rem;
+    }
+
+    .balance-card .amount {
+        font-size: 2rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+}
