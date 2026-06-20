@@ -14,16 +14,18 @@
 
 <body>
 
-
+<!--header depósitos-->    
     <header>
         <h1 class="title">Depósitos</h1>
         <h3 class="title">Aquí puede realizar depósitos a sus cuentas personales de Alke Wallet</h3>
     </header>
+
+<!--formulario depósitos-->    
     <main class="container mt-5">
         <div class="card p-4">
             <form class="box_deposit">
                 <div class="mb-3">
-                    <label for="banco">Banco de origen</label>
+                    <label for="banco" id="banco">Banco de origen</label>
                     <select id="banco" name="origen" class="form-select" required>
                         <option value="" selected disabled>Seleccione un banco</option>
                         <option value="estado">Banco del Estado</option>
@@ -46,6 +48,9 @@
                         <option value="rut">CuentaRut</option>
                     </select>
                 </div>
+
+<!--formulario ingreso numerico-->
+
                 <div class="mb-3">
                     <label for="cuenta">Número de cuenta</label>
                     <input type="text" class="form-control" name="cuenta" id="cuenta" pattern="[0-9]+" required>
@@ -59,12 +64,15 @@
                 </div>
             </form>
         </div>
-
     </main>
+
+<!--pie de pagina-->
 
     <footer>
         <p class="pie">© 2026 Alke Wallet</p>
     </footer>
+
+<!--javascript-->    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
