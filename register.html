@@ -6,69 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse en Alke Wallet</title>
 
-<!--bootstrap-->    
+    <!--bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-<!--CSS-->
+    <!--CSS-->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+
+    <!--cabecera de pagina-->
+
     <header>
-        <h1 class="title">Inscríbase en Alke Wallet</h1>
+        <h1 class="title">Alke Wallet</h1>
     </header>
 
-<!--formulario de registro-->
+    <!--formulario de registro-->
 
-    <main class="container mt-5" id="registro">
+    <main class="container" id="registro">
+        <div class="text-center">
+            <h3>Registro</h3>
+            <p>Regístrate en Alke Wallet y entrarás a un mundo de beneficios!</p>
+        </div>
         <div class="form">
-            < <h2 class="title">Registro Alke Wallet</h2>
-                <form action="menu.html" method="post" id="form-registro">
-                    <div class="mb-3 w-100">
-                        <label for="nombre">Nombre:</label><br>
-                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" id="nombre" required><br>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email">Correo electrónico:</label><br>
-                        <input type="email" id="email" name="email" placeholder="tu@email.com" id="email" required><br>
-                    </div>
-                    <div class="mb-3">
-                        <label for="fono">Teléfono:</label><br>
-                        <input type="tel" id="fono" name="fono" placeholder="+569xxxxxxxx" required><br>
-                    </div>
-                    <div class="mb-3">
-                        <label for="nacimiento">Fecha de nacimiento</label><br>
-                        <input type="date" id="birth" name="nacimiento" placeholder="01/01/2000" required><br>
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" name="password" id="password">
-                    </div>
-                    <div class="mb-3 w-100">
-                        <label for="password" class="form-label">Confirmar contraseña</label>
-                        <input type="password" class="form-control" name="passsword_confirm" id="password_confirm">
-                    </div>
-                </form>
-        </div>        
+            <form action="menu.html" method="post" id="form-registro">
+                <div class="mb-3 w-100">
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" id="nombre" required><br>
+                </div>
+                <div class="mb-3">
+                    <label for="email">Correo electrónico:</label><br>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" id="email" required><br>
+                </div>
+                <div class="mb-3">
+                    <label for="fono">Teléfono:</label><br>
+                    <input type="tel" id="fono" name="fono" placeholder="+569xxxxxxxx" required><br>
+                </div>
+                <div class="mb-3">
+                    <label for="nacimiento">Fecha de nacimiento</label><br>
+                    <input type="date" id="birth" name="nacimiento" placeholder="01/01/2000" required><br>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" name="password" id="password">
+                </div>
+                <div class="mb-3 w-100">
+                    <label for="password" class="form-label">Confirmar contraseña</label>
+                    <input type="password" class="form-control" name="passsword_confirm" id="password_confirm">
+                </div>
+            </form>
+        </div>
 
-<!--botón de acción-->
-        
+        <!--botón de acción-->
+
         <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-4">
-                <button type="submit" class="btn btn-primary mt-3">Registrarse</button>
+            <button type="submit" class="btn btn-primary mt-3">Registrarse</button>
         </div>
     </main>
 
     <div class="text-center">
         <p>Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
-    </div>    
+    </div>
 
-<!--pie de pagina-->   
+    <!--pie de pagina-->
 
     <footer>
         <p class="pie"> 2026 Alke Wallet</p>
     </footer>
 
-<!--javascript-->    
+    <!--javascript-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
