@@ -38,12 +38,12 @@
         </div>
         <form>
             <div>
-                <div class="mb-3">
-                    <label for="nombre">Nombre receptor</label>
+                <div class="mb-3 w-100">
+                    <label for="nombre" class="form-label">Nombre receptor</label>
                     <input type="text" class="form-control" name="nombre" id="nombre">
                 </div>
-                <div class="mb-3">
-                    <label for="banco">Banco destinatario</label>
+                <div class="mb-3 w-100">
+                    <label for="banco" class="form-label">Banco destinatario</label>
                     <select id="banco" name="origen" class="form-select" required>
                         <option value="" selected disabled>Seleccione el Banco</option>
                         <option value="estado">Banco del Estado</option>
@@ -55,8 +55,8 @@
                         <option value="bice">Banco BICE</option>
                         <option value="scotiabank">Scotiabank</option>
                     </select>
-                    <div class="mb-3">
-                        <label for="tpo-cta">Tipo de cuenta</label>
+                    <div class="mb-3 w-100">
+                        <label for="tpo-cta" class="form-label">Tipo de cuenta</label>
                         <select id="tpo-cta" name="tipoCuenta" class="form-select" required>
                             <option value="" selected disabled>Seleccione un tipo de cuenta</option>
                             <option value="corriente">Corriente</option>
@@ -65,12 +65,12 @@
                             <option value="rut">CuentaRut</option>
                         </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="nro-cta">Número de cuenta destino</label>
+                    <div class="mb-3 w-100">
+                        <label for="nro-cta" class="form-label">Número de cuenta destino</label>
                         <input type="number" class="form-control" name="nro-cta" id="nro-cta">
                     </div>
-                    <div class="mb-3">
-                        <label for="email">Correo electrónico</label>
+                    <div class="mb-3 w-100">
+                        <label for="email" class="form-label">Correo electrónico</label>
                         <input type="email" class="form-control" name="email" id="email">
                     </div>
                     <div class="form-check">
@@ -84,11 +84,11 @@
                 <h3 class="title">Datos del emisor</h3>
             </div>
             <div class="mb-3">
-                <label for="origen">Cuenta de origen</label>
+                <label for="origen" class="form-label">Cuenta de origen</label>
                 <input type="number" class="form-control" name="origen" id="origen">
             </div>
             <div class="mb-3">
-                <label for="monto">Monto a transferir</label>
+                <label for="monto" class="form-label">Monto a transferir</label>
                 <input type="number" class="form-control" name="monto" id="monto">
             </div>
             <div class="mb-3">
