@@ -2,7 +2,7 @@
 
 document.getElementById("form-registro").addEventListener("submit", function(event) {
     event.preventDefault();
-    
+
     const nombre = document.getElementById("nombre").value;
     const email = document.getElementById("email").value;
     const fono = document.getElementById("fono").value;
@@ -58,7 +58,8 @@ document.getElementById("form-login").addEventListener("submit", function (event
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
     const usuarioEncontrado = usuarios.find(function (user) {
-        return user.usuario === usuario && user.password === password;
+        return user.email === usuario && 
+                user.password === password;
 
         if (usuarioEncontrado) {
 
@@ -87,7 +88,7 @@ document.getElementById("form-login").addEventListener("submit", function (event
 
     /*cierre de sesión*/
 
-    document.getElemenntByiD("logout").addEventListener
+    document.getElementByiD("logout").addEventListener
         ("click", function () {
             localStorage.removeItem("usuarioLogueado");
             window.location.href = "login.html";
@@ -100,20 +101,20 @@ document.getElementById("form-login").addEventListener("submit", function (event
     const usuarioLogueado = localStorage.getItem("usuario");
 
     if (!usuarioLogueado) {
-        window.Location.href = "login.html";
+        window.location.href = "login.html";
 
     }
     })
 
     /*saldo*/
-        if(localStorage.getItem("saldo" === null)){
+        if(localStorage.getItem("saldo") === null){
             localStorage.setItem("saldo", 500000);
     }
 
     let saldo = Number(localStorage.getItem("saldo"));
 
-    document.querySelector(".saldo").textContent = "$" + saldo
-    saldo.toLocaleString("es-CL")
+    document.querySelector(".saldo").textContent = 
+    "$" + saldo.toLocaleString("es-CL")
 
 
 
