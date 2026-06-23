@@ -2,7 +2,7 @@
 
 document.getElementById("form-registro").addEventListener("submit", function(event) {
     event.preventDefault();
-
+    
     const nombre = document.getElementById("nombre").value;
     const email = document.getElementById("email").value;
     const fono = document.getElementById("fono").value;
@@ -22,18 +22,20 @@ document.getElementById("form-registro").addEventListener("submit", function(eve
 
     const nuevoUsuario = {
         nombre,
-        usuario,
+        email,
+        fono,
+        nacimiento,
         password,
     }
 
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    usuario.push(nuevoUsuarios);
+    usuarios.push(nuevoUsuario);
 
     localStorage.setItem("usuarios", JSON.stringify(usuarios))
 
     document.getElementById("mensaje").innerHTML = `
-        <div class="alert alert-sucess alert-dismissible fade show" role="alert">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
             Registro exitoso, redirigiendo....
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
