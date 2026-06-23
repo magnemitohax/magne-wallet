@@ -1,10 +1,12 @@
 /*Registro*/
 
-document.getElementById("form-registro").addEventListener("submit", function (event) {
+document.getElementById("form-registro").addEventListener("submit", function(event) {
     event.preventDefault();
 
     const nombre = document.getElementById("nombre").value;
-    const usuario = document.getElementById("usuario").value;
+    const email = document.getElementById("email").value;
+    const fono = document.getElementById("fono").value;
+    const nacimiento = document.getElementById("nacimiento").value;
     const password = document.getElementById("password").value;
     const confirmarPassword = document.getElementById("confirmarpassword").value;
 

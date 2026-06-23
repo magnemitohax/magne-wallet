@@ -23,37 +23,46 @@
 
     <!--formulario de registro-->
 
-    <main class="container" id="registro">
-        <div class="text-center">
-            <h3>Registro</h3>
-            <p>Regístrate en Alke Wallet y entrarás a un mundo de beneficios!</p>
-        </div>
-        <div class="form">
-            <form action="menu.html" method="post" id="form-registro">
+    <main class="container" id="register">
+        <div id="mensaje"></div>
+            <h3 class="text-center mb-4">Registro</h3>
+            <p class="text-center mb-4">Regístrate en Alke Wallet y entrarás a un mundo de beneficios!</p>
+        
+            <form id="form-registro">
                 <div class="mb-3 w-100">
                     <label for="nombre" class="form-label">Nombre:</label><br>
-                    <input type="text" id="nombre" class="form-control" name="nombre" placeholder="Tu nombre" id="nombre" required><br>
+                    <input type="text" id="nombre" class="form-control" name="nombre" placeholder="Tu nombre"
+                        id="nombre" required><br>
                 </div>
+
                 <div class="mb-3 w-100">
                     <label for="email" class="form-label">Correo electrónico:</label><br>
-                    <input type="email" id="email" class="form-control" name="email" placeholder="tu@email.com" id="email" required><br>
+                    <input type="email" id="email" class="form-control" name="email" placeholder="tu@email.com"
+                        id="email" required><br>
                 </div>
+
                 <div class="mb-3 w-100">
                     <label for="fono" class="form-label">Teléfono:</label><br>
-                    <input type="tel" id="fono" class="form-control" name="fono" placeholder="+569xxxxxxxx" required><br>
+                    <input type="tel" id="fono" class="form-control" name="fono" placeholder="+569xxxxxxxx"
+                        required><br>
                 </div>
+
                 <div class="mb-3 w-100">
                     <label for="nacimiento" class="form-label">Fecha de nacimiento</label><br>
-                    <input type="date" id="birth" class="form-control" name="nacimiento" placeholder="01/01/2000" required><br>
+                    <input type="date" id="nacimiento" class="form-control" name="nacimiento" placeholder="01/01/2000"
+                        required><br>
                 </div>
+
                 <div class="mb-3 w-100">
                     <label for="password" class="form-label">Contraseña</label>
                     <input type="password" class="form-control" name="password" id="password">
                 </div>
+
                 <div class="mb-3 w-100">
-                    <label for="password" class="form-label">Confirmar contraseña</label>
+                    <label for="passwordConfirm" class="form-label">Confirmar contraseña</label>
                     <input type="password" class="form-control" name="confirmarpassword" id="confirmarpassword">
                 </div>
+
             </form>
         </div>
 
