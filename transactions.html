@@ -27,7 +27,7 @@
 
     <!--movimientos-->
 
-    <main class="container" id="transferencia">
+    <main class="container py-5" id="transferencia">
         <div class="text-center">
             <h4>Historial de transacciones</h4>
             <p>Consulte transacciones realizadas, cargos hechos y dineros recibidos.</p>
@@ -38,67 +38,71 @@
                 <label for="fecha" class="form-label">Fecha del movimiento</label>
                 <input type="date" class="form-control" name="fecha" id="fecha">
             </div>
-                <div class="table-responsive" id="tabla">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Fecha</th>
-                                <th>Hora</th>
-                                <th>Monto</th>
-                                <th>Tipo movimiento</th>
-                                <th>Comercio</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>06/06/2026</td>
-                                <td>14:37</td>
-                                <td>-$2.990</td>
-                                <td>Compra</td>
-                                <td>Aramco Balneario Antofagasta</td>
-                            </tr>
-                            <tr>
-                                <td>06/06/2026</td>
-                                <td>00:53</td>
-                                <td>$985.357</td>
-                                <td>Ingreso remuneraciones</td>
-                                <td>FAMG SpA</td>
-                            </tr>
-                            <tr>
-                                <td>31/05/2026</td>
-                                <td>10:46</td>
-                                <td>-$39.990</td>
-                                <td>Compra</td>
-                                <td>Pago electrónico Movistar</td>
-                            </tr>
-                            <tr>
-                                <td>31/05/2026</td>
-                                <td>10:40</td>
-                                <td>-$68.000</td>
-                                <td>Transferencia saliente</td>
-                                <td>Comunidad Edificio Plaza Colón</td>
-                            </tr>
-                            <tr>
-                                <td>22/05/2026</td>
-                                <td>17:55</td>
-                                <td>-$28.590</td>
-                                <td>Compra</td>
-                                <td>Jumbo Angamos</td>
-                            </tr>
-                            <tr>
-                                <td>21/05/2026</td>
-                                <td>18:45</td>
-                                <td>$100.000</td>
-                                <td>Transferencia entrante</td>
-                                <td>Transferencia otros bancos</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="table-responsive" id="tabla">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Monto</th>
+                                    <th>Tipo movimiento</th>
+                                    <th>Comercio</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaMovimientos">
+                                <tr>
+                                    <td>06/06/2026</td>
+                                    <td>14:37</td>
+                                    <td class="egreso">-$2.990</td>
+                                    <td>Compra</td>
+                                    <td>Aramco Balneario Antofagasta</td>
+                                </tr>
+                                <tr>
+                                    <td>06/06/2026</td>
+                                    <td>00:53</td>
+                                    <td class="ingreso">$985.357</td>
+                                    <td>Ingreso remuneraciones</td>
+                                    <td>FAMG SpA</td>
+                                </tr>
+                                <tr>
+                                    <td>31/05/2026</td>
+                                    <td>10:46</td>
+                                    <td class="egreso">-$39.990</td>
+                                    <td>Compra</td>
+                                    <td>Pago electrónico Movistar</td>
+                                </tr>
+                                <tr>
+                                    <td>31/05/2026</td>
+                                    <td>10:40</td>
+                                    <td class="egreso">-$68.000</td>
+                                    <td>Transferencia saliente</td>
+                                    <td>Comunidad Edificio Plaza Colón</td>
+                                </tr>
+                                <tr>
+                                    <td>22/05/2026</td>
+                                    <td>17:55</td>
+                                    <td class="egreso">-$28.590</td>
+                                    <td>Compra</td>
+                                    <td>Jumbo Angamos</td>
+                                </tr>
+                                <tr>
+                                    <td>21/05/2026</td>
+                                    <td>18:45</td>
+                                    <td class="egreso">$100.000</td>
+                                    <td>Transferencia entrante</td>
+                                    <td>Transferencia otros bancos</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+            </div>
         </section>
         <div>
             <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-4">
-                <button type="submit" class="btn btn-danger mt-3">Reportar movimiento inusual</button>
+                <button type="button" class="btn btn-danger mt-3" id="btnReporte">Reportar movimiento inusual</button>
             </div>
         </div>
     </main>
@@ -113,6 +117,8 @@
     </footer>
 
     <!--javascript-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="assets/js/script.js"></script>
 

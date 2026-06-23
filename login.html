@@ -33,18 +33,18 @@
             <form id="form-login">
                 <div class="mb-3" id="nameLogin">
                     <label for="email" class="form-label">Usuario</label>
-                    <input type="text" class="form-control" placeholder="tu@correo.com" name="email" id="email" required>
+                    <input type="email" class="form-control" placeholder="tu@correo.com" name="email" id="email" autocomplete="email" required>
                 </div>
                 <div class="mb-3" id="passwordLogin">
                     <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" placeholder="tu contraseña" name="password" id="password" required>
+                    <input type="password" class="form-control" placeholder="tu contraseña" name="password" id="password" minlength="8" autocomplete="current-password" required>
                 </div>
                 <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-4">
                     <button type="submit" class="btn btn-primary mt-3">Iniciar sesión</button>
                 </div>
-                <div class="form-check" id="paswordRemember">
-                    <label for="recordar-datos" class="form-check-label">Recordar mis datos en este navegador</label>
+                <div class="form-check" id="rememberPassword">
                     <input type="checkbox" class="form-check-input" id="recordar-datos">
+                    <label for="recordar-datos" class="form-check-label">Recordar mis datos en este navegador</label>
                 </div>
                 <div class="text-center">
                     <p>No tienes cuenta? <a href="register.html">Regístrate!</a></p>
@@ -58,12 +58,13 @@
     <footer>
         <p class="pie">2026 Alke Wallet</p>
         <div class="text-center">
-            <a href="menu.html">Volver al inicio</a>
+            <a href="index.html">Volver al inicio</a>
         </div>
     </footer>
 
     <!--javascript-->
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="assets/js/script.js"></script>
 

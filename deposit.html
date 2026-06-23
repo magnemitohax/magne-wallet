@@ -22,10 +22,10 @@
 
 <!--formulario depósitos-->    
     <main class="container mt-5">
-        <div class="card p-4">
-            <form class="box_deposit">
+        <div class="card p-4 shadow">
+            <form class="box_deposit" id="formDepositar">
                 <div class="mb-3">
-                    <label for="banco" id="banco">Banco de origen</label>
+                    <label for="banco">Banco de origen</label>
                     <select id="banco" name="origen" class="form-select" required>
                         <option value="" selected disabled>Seleccione un banco</option>
                         <option value="estado">Banco del Estado</option>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="monto">Monto a depositar</label>
-                    <input type="number" class="form-control" id="monto" min="1" required>
+                    <input type="number" class="form-control" name="monto" id="monto" min="1" required>
                 </div>
                 <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-4">
                 <button type="submit" class="btn btn-primary mt-3">Depositar</button>
@@ -76,6 +76,8 @@
     </footer>
 
 <!--javascript-->    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="assets/js/script.js"></script>
 

@@ -1,7 +1,12 @@
 /*Registro*/
 
-document.getElementById("form-registro").addEventListener("submit", function(event) {
-    event.preventDefault();
+const formRegistro = document.getElementById("form-registro");
+
+if (formRegistro) {
+
+    formRegistro.addEventListener("submit", function(event) {
+
+        event.preventDefault();
 
     const nombre = document.getElementById("nombre").value;
     const email = document.getElementById("email").value;
@@ -49,8 +54,13 @@ document.getElementById("form-registro").addEventListener("submit", function(eve
 
 /*Inicio de sesión*/
 
-document.getElementById("form-login").addEventListener("submit", function (event) {
-    event.preventDefault();
+const formLogin = document.getElementById("form-login");
+
+if (formLogin) {
+
+    formLogin.addEventListener("submit", function(event) {
+
+        event.preventDefault();
 
     const usuario = document.getElementById("nombre").value;
     const password = document.getElementById("password").value;
@@ -116,5 +126,4 @@ document.getElementById("form-login").addEventListener("submit", function (event
     document.querySelector(".saldo").textContent = 
     "$" + saldo.toLocaleString("es-CL")
 
-
-
+}}
