@@ -105,8 +105,17 @@ if (formLogin) {
 
         })
 
+    /*cierra sesiones activas*/
+        localStorage.removeItem("usuarioLogueado");
 
-    /*Menú*/
+    /*redirecciona la inicio*/
+        window.location.href = "login.html";
+    
+});
+
+
+
+    /*menú*/
 
     const usuarioLogueado = localStorage.getItem("usuario");
 
@@ -114,16 +123,195 @@ if (formLogin) {
         window.location.href = "login.html";
 
     }
-    })
+
 
     /*saldo*/
+        /*saldo inicial*/
         if(localStorage.getItem("saldo") === null){
             localStorage.setItem("saldo", 500000);
     }
 
+        /*saldo actualizado*/
     let saldo = Number(localStorage.getItem("saldo"));
 
+        /*muestra el saldo actual*/
     document.querySelector(".saldo").textContent = 
     "$" + saldo.toLocaleString("es-CL")
 
 }}
+
+
+
+    /*usuario logueado*/
+    
+        const usuarioLogueado = JSON.parse(
+            localStorage.getItem("usuarioLogueado")
+    );
+
+    /*redirección sin login*/
+
+        if (!usuarioLogueado) {
+            window.location.href = "login.html";
+}
+
+
+/*destinatarios*/
+
+const inputBusqueda = document.getElementById("buscarUsuario");
+const listaUsuarios = document.getElementById("listaUsuarios");
+
+// Obtener usuarios guardados
+const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+inputBusqueda.addEventListener("input", function () {
+
+    const texto = this.value.toLowerCase();
+
+    // Limpiar resultados anteriores
+    listaUsuarios.innerHTML = "";
+
+    // Si no escribió nada
+    if (texto === "") {
+        return;
+    }
+
+    // Filtrar usuarios
+    const resultados = usuarios.filter(usuario =>
+        usuario.usuario !== usuarioLogueado.usuario && (
+            usuario.nombre.toLowerCase().includes(texto) ||
+            usuario.usuario.toLowerCase().includes(texto)
+        )
+    );
+
+    // Mostrar resultados
+    resultados.forEach(usuario => {
+
+        const item = document.createElement("button");
+
+        item.type = "button";
+        item.classList.add("list-group-item", "list-group-item-action");
+
+        item.innerHTML = `
+            <strong>${usuario.nombre}</strong>
+            <br>
+            <small>@${usuario.usuario}</small>
+        `;
+
+        // Seleccionar usuario
+        item.addEventListener("click", function () {
+            inputBusqueda.value = usuario.usuario;
+            listaUsuarios.innerHTML = "";
+        });
+
+        listaUsuarios.appendChild(item);
+    });
+
+});
+
+
+    /*transferencias*/
+
+document.getElementById("formEnvio").addEventListener("submit", function (e) {
+
+    /*evitar recarga*/
+    e.preventDefault();
+
+    /*datos destinatario*/
+    const destinatario =
+        document.getElementById("buscarUsuario").value.trim();
+
+    const monto =
+        Number(document.getElementById("monto").value);
+
+    /*saldo actualizado*/
+    let saldo =
+        Number(localStorage.getItem("saldo"));
+
+/*validaciones*/
+
+
+    /*destinatario*/
+    if (!destinatario) {
+
+        document.getElementById("mensaje").innerHTML = `
+                    <div class="alert alert-danger">
+                        Debe seleccionar un destinatario.
+                    </div>
+                `;
+
+        return;
+    }
+
+    /*monto a enviar*/
+    if (monto <= 0) {
+
+        document.getElementById("mensaje").innerHTML = `
+                <div class="alert alert-danger">
+                    Debe ingresar un monto válido.
+                </div>
+            `;
+
+        return;
+    }
+
+    /*monto disponible*/
+    if (monto > saldo) {
+
+        document.getElementById("mensaje").innerHTML = `
+                <div class="alert alert-danger">
+                    Saldo insuficiente.
+                </div>
+            `;
+
+        return;
+    }
+
+   /*saldo actualizado*/
+
+    saldo -= monto;
+
+    localStorage.setItem("saldo", saldo);
+
+/*registro de movimientos*/
+
+    let transacciones =
+        JSON.parse(
+            localStorage.getItem("transacciones")
+        ) || [];
+
+    transacciones.push({
+
+        tipo: "envio",
+        destinatario: destinatario,
+        monto: monto,
+        fecha: new Date().toLocaleString("es-CL")
+
+    });
+
+    localStorage.setItem(
+        "transacciones",
+        JSON.stringify(transacciones)
+    );
+
+    /*mensajes de interfaz*/
+
+    /*mensaje de exito*/
+    document.getElementById("mensaje").innerHTML = `
+            <div class="alert alert-success">
+                Transferencia realizada correctamente.
+            </div>
+        `;
+
+    /*cambio saldo a moneda local*/
+    document.querySelector(".saldo").textContent =
+        "$" + saldo.toLocaleString("es-CL");
+
+    /*reinicio formulario*/
+    this.reset();
+
+    /*duración mensaje*/
+    setTimeout(() => {
+        document.getElementById("mensaje").innerHTML = "";
+    }, 3000);
+
+});
