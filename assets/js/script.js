@@ -266,7 +266,7 @@ document.getElementById("formEnvio").addEventListener("submit", function (e) {
         return;
     }
 
-   /*saldo actualizado*/
+    /*saldo actualizado*/
 
     saldo -= monto;
 
